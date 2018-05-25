@@ -37,7 +37,7 @@ public class LivroDAO implements ILivroDAO {
 	public int exclui (String isbn) {
 		java.sql.PreparedStatement ps;
 		int codigoretorno = 0;
-		try (Connection conn = new FabricaDeConexoes().getConnection()) {
+		try (Connection conn = MySQLDAOFactory.createConnection()) {
 			ps= conn.prepareStatement ("delete from Livro where isbn = ?");
 			ps.setString(1, isbn);
 			codigoretorno = ps.executeUpdate();
