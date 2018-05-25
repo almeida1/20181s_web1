@@ -75,7 +75,6 @@ public class UC06CadastrarLivro {
 	public void CT05CadastrarLivro(){
 		//cenario
 		Livro umLivro = ObtemLivro.comDadosValidos();
-		// create the required DAO Factory
 		DAOFactory mySQLFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 		ILivroDAO livroDAO = mySQLFactory.getLivroDAO();
 		//acao

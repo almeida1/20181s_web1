@@ -35,6 +35,7 @@ public class ServletControle extends HttpServlet {
     	cmds.put("/home", new Home());
     	cmds.put("CadastrarLivro", new Cmd_CadastrarLivro());
     	cmds.put("ExcluirLivro", new Cmd_ExcluirLivro());
+    	cmds.put("ConsultarLivro", new Cmd_ConsultarLivro());
    	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
