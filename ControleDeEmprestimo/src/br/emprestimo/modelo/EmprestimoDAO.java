@@ -13,12 +13,11 @@ public class EmprestimoDAO implements IEmprestimoDAO{
 	Logger logger = Logger.getLogger(EmprestimoDAO.class);
 
 	public int adiciona(Emprestimo emprestimo) {
-		System.out.println(emprestimo.getLivro().getIsbn());
 		PreparedStatement ps;
 		int codigoRetorno = 0;
 		try (Connection conn = new FabricaDeConexoes().getConnection()) {
 			ps = (PreparedStatement) conn.prepareStatement(
-					"insert into Emprestimo (emprestimoNumero, codigoLivro, codigoUsuario, dataEmprestimo, dataDevolucao) values(?,?,?,?,?)");
+					"insert into Emprestimo (emprestimoNumero, Livro_isbn, Usuario_ra, dataEmprestimo, dataDevolucao) values(?,?,?,?,?)");
 			ps.setInt(1, emprestimo.getEmprestimoNumero());
 			ps.setString(2, emprestimo.getLivro().getIsbn());
 			ps.setString(3, emprestimo.getUsuario().getRa());
@@ -30,7 +29,9 @@ public class EmprestimoDAO implements IEmprestimoDAO{
 			ps.close();
 
 		} catch (SQLException e) {
+			logger.info("SQLException do metodo adiciona livro = " + e.getMessage());
 			throw new RuntimeException(e);
+			
 		}
 		return codigoRetorno;
 	}
@@ -43,6 +44,7 @@ public class EmprestimoDAO implements IEmprestimoDAO{
 			codigoretorno = ps.executeUpdate();
 			}
 		catch (SQLException e){
+			logger.info("SQLException do metodo adiciona exclui = " + e.getMessage());
 			throw new RuntimeException(e);
 		}
 	return codigoretorno;

@@ -8,7 +8,9 @@ import org.junit.Test;
 import br.emprestimo.modelo.Emprestimo;
 import br.emprestimo.modelo.EmprestimoDAO;
 import br.emprestimo.modelo.Livro;
+import br.emprestimo.modelo.LivroDAO;
 import br.emprestimo.modelo.Usuario;
+import br.emprestimo.modelo.UsuarioDAO;
 import br.emprestimo.servico.ConfiguraDB;
 import br.emprestimo.servico.FabricaDeConexoes;
 import br.emprestimo.servico.ServicoEmprestimo;
@@ -111,7 +113,13 @@ public class UC01RegistraEmprestimoDeLivro {
 	public void CT06_registra_emprestimo_com_sucesso() {
 		// cenario
 		Livro umLivro = ObtemLivro.comDadosValidos();
+		LivroDAO livroDAO = new LivroDAO();
+		livroDAO.exclui(umLivro.getIsbn());
+		livroDAO.adiciona(umLivro);
 		Usuario umUsuario = ObtemUsuario.comDadosValidos();
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarioDAO.adiciona(umUsuario);
+		
        	ServicoEmprestimo servico = new ServicoEmprestimo();
 		Emprestimo umEmprestimo = servico.empresta(umLivro, umUsuario);
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
@@ -120,6 +128,9 @@ public class UC01RegistraEmprestimoDeLivro {
 		int resultadoObtido = emprestimoDAO.adiciona(umEmprestimo);
 		//verificacao
 		assertEquals (1, resultadoObtido);
+		emprestimoDAO.exclui(0);
+		usuarioDAO.exclui(umUsuario.getRa());
+		livroDAO.exclui(umLivro.getIsbn());
 		
 
 	}
