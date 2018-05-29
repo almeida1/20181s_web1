@@ -1,6 +1,6 @@
 package br.emprestimo.testeUnitario;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
 
 import br.emprestimo.modelo.Emprestimo;
 import br.emprestimo.modelo.Livro;

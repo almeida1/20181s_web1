@@ -3,6 +3,10 @@ package br.emprestimo.controle;
 import java.io.Serializable;
 
 public class WebsiteTitle implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String title = "Sistema de Controle de Estagio";
 
 	public String getTitle() {

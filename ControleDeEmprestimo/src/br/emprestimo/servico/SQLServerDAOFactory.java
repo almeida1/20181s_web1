@@ -8,19 +8,16 @@ public class SQLServerDAOFactory extends DAOFactory {
 
 	@Override
 	public EmprestimoDAO getEmprestimoDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public LivroDAO getLivroDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public UsuarioDAO getUsuarioDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

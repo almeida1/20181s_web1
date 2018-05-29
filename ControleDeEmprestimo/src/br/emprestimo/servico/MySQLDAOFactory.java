@@ -42,7 +42,6 @@ public class MySQLDAOFactory extends DAOFactory {
 	  }
 	@Override
 	public EmprestimoDAO getEmprestimoDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -53,7 +52,6 @@ public class MySQLDAOFactory extends DAOFactory {
 
 	@Override
 	public UsuarioDAO getUsuarioDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

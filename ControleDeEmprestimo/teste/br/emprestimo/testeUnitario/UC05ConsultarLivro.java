@@ -1,12 +1,11 @@
 package br.emprestimo.testeUnitario;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 import br.emprestimo.modelo.ILivroDAO;
 import br.emprestimo.modelo.Livro;
-import br.emprestimo.modelo.LivroDAO;
 import br.emprestimo.servico.DAOFactory;
 
 public class UC05ConsultarLivro {

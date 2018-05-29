@@ -1,20 +1,14 @@
 package br.emprestimo.testeUnitario;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import br.emprestimo.controle.Cmd_CadastrarLivro;
-import br.emprestimo.controle.Home;
-import br.emprestimo.controle.ICommand;
 import br.emprestimo.modelo.ILivroDAO;
 import br.emprestimo.modelo.Livro;
-import br.emprestimo.modelo.LivroDAO;
 import br.emprestimo.servico.DAOFactory;
 public class UC06CadastrarLivro {
 	
@@ -26,6 +20,7 @@ public class UC06CadastrarLivro {
 			Livro umLivro;
 			//acao
 			umLivro = ObtemLivro.comDadosValidos();
+			assertNotNull(umLivro);
 		}catch(RuntimeException e){
 			//verificacao
 			fail ("nao deve falhar");;

@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 
 import br.emprestimo.modelo.ILivroDAO;
 import br.emprestimo.modelo.Livro;
-import br.emprestimo.modelo.LivroDAO;
 import br.emprestimo.servico.DAOFactory;
 
 
